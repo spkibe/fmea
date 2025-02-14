@@ -1,0 +1,171 @@
+:root {
+    --bg-color: #8fbc8f; /* Light green background */
+    --accent-color: #5A8C5B;
+    --secondary-color: #f6fbe7;
+    --font-color: #333;
+    --border-color: #ddd;
+    --highlight: #e0f4df;
+    --heading-font: 'Patrick Hand', cursive;
+    --body-font: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    background: var(--bg-color);
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background 0.3s;
+}
+
+header {
+    text-align: center;
+    padding: 1em;
+    background: #ffffffee;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.content {
+    padding: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    font-family: var(--heading-font);
+    color: var(--accent-color);
+    margin-bottom: 1em;
+}
+
+.content p {
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid var(--border-color);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+tbody tr:hover {
+    background: var(--highlight);
+    transition: background 0.3s ease;
+}
+
+/* Form Styling */
+form {
+    background: #ffffffee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--body-font);
+    background: var(--secondary-color);
+    transition: all 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--highlight);
+    outline: none;
+}
+
+input[type="submit"] {
+    background: var(--accent-color);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #487a48;
+}
+
+/* List Styling */
+ul, ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background: #ffffff99;
+    backdrop-filter: blur(10px);
+    color: #666;
+    margin-top: auto;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .content {
+        padding: 1em;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+
+    input, select, textarea {
+        font-size: 0.9rem;
+    }
+}

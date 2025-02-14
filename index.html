@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSC 7310 HW4 - Form and Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>FSC 7310 HW4 - Form and Analysis</h1>
+    </header>
+
+    <div class="content">
+        <!-- Form Section -->
+        <h2>Form with 10 Components</h2>
+        <form action="https://www.w3schools.com/action_page.php" method="post" target="_blank">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Type your name here"><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+
+            <label for="subscribe">Subscribe to newsletter:</label>
+            <input type="checkbox" id="subscribe" name="subscribe"><br><br>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+            </select><br><br>
+
+            <label for="comments">Comments:</label><br>
+            <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+            <label for="file">Upload a file:</label>
+            <input type="file" id="file" name="file"><br><br>
+
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" id="birthdate" name="birthdate"><br><br>
+
+            <p>After submission, your response will open in a new tab.</p>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- Analysis Sections (FMEA, 5 Whys, Comparison) -->
+        <h2>FMEA Analysis: UALR Course Registration System</h2>
+        <p>This analysis focuses on the failure mode of <strong>students being unable to register for classes</strong>.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Failure Mode</th>
+                    <th>Potential Causes</th>
+                    <th>Effects</th>
+                    <th>Severity</th>
+                    <th>Likelihood</th>
+                    <th>Detection</th>
+                    <th>Risk Priority Number (RPN)</th>
+                    <th>Suggested Improvements</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Students unable to register for classes</td>
+                    <td>
+                        <ul>
+                            <li>System server downtime</li>
+                            <li>Incorrect student credentials</li>
+                            <li>Course capacity full</li>
+                            <li>Browser compatibility issues</li>
+                            <li>Network connectivity problems</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Delayed course enrollment</li>
+                            <li>Frustration among students</li>
+                            <li>Increased workload for support staff</li>
+                        </ul>
+                    </td>
+                    <td>High</td>
+                    <td>Medium</td>
+                    <td>Low</td>
+                    <td>8 (Severity: 4, Likelihood: 2, Detection: 1)</td>
+                    <td>
+                        <ul>
+                            <li>Implement a backup server for high traffic periods</li>
+                            <li>Add real-time notifications for course availability</li>
+                            <li>Improve browser compatibility testing</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 5 Whys Section -->
+        <h2>5 Whys Technique</h2>
+        <p>The <strong>5 Whys</strong> technique is used to identify the root cause of the failure mode:</p>
+        <ol>
+            <li><strong>Why are students unable to register for classes?</strong><br>
+                Because the registration system crashes during peak times.</li>
+            <li><strong>Why does the system crash during peak times?</strong><br>
+                Because the server cannot handle the high volume of requests.</li>
+            <li><strong>Why can’t the server handle the high volume of requests?</strong><br>
+                Because it lacks sufficient resources (e.g., memory, processing power).</li>
+            <li><strong>Why does it lack sufficient resources?</strong><br>
+                Because the university did not anticipate the increase in student enrollment.</li>
+            <li><strong>Why wasn’t the increase in enrollment anticipated?</strong><br>
+                Because there was no mechanism to track and predict enrollment trends.</li>
+        </ol>
+        <p><strong>Root Cause:</strong> Lack of predictive analytics and scalable infrastructure to handle enrollment growth.</p>
+        <p><strong>Solution:</strong> Invest in scalable server infrastructure and implement predictive analytics for enrollment trends.</p>
+
+        <!-- Comparison Section -->
+        <h2>Comparison of FMEA and 5 Whys</h2>
+        <p>Below is a comparison of the two techniques:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>FMEA</th>
+                    <th>5 Whys</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Purpose</strong></td>
+                    <td>Identify and prioritize potential failure modes in a system.</td>
+                    <td>Drill down to the root cause of a specific problem.</td>
+                </tr>
+                <tr>
+                    <td><strong>Complexity</strong></td>
+                    <td>More comprehensive and structured.</td>
+                    <td>Simple and quick to apply.</td>
+                </tr>
+                <tr>
+                    <td><strong>Scope</strong></td>
+                    <td>Best for systems with multiple components and interactions.</td>
+                    <td>Best for problems with a clear cause-and-effect relationship.</td>
+                </tr>
+                <tr>
+                    <td><strong>Output</strong></td>
+                    <td>List of failure modes, their causes, effects, and suggested improvements.</td>
+                    <td>Single root cause and a proposed solution.</td>
+                </tr>
+                <tr>
+                    <td><strong>Applicability</strong></td>
+                    <td>Preventive measures for complex systems.</td>
+                    <td>Reactive problem-solving for specific issues.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2025 FSC 7310 HW4. <a href="#">Back to Top</a></p>
+    </footer>
+</body>
+</html>
